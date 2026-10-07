@@ -68,6 +68,8 @@ $descricao = $produto['descricao'] ?? 'Sem descrição disponível para este pro
     <title><?php echo htmlspecialchars($nome); ?> - Detalhes</title>
     <link rel="stylesheet" href="produtos.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
         .container-detalhes {
             max-width: 900px;
             margin: auto;
@@ -129,6 +131,29 @@ $descricao = $produto['descricao'] ?? 'Sem descrição disponível para este pro
             background-color: #f9f9f9;
             border-radius: 10px;
         }
+
+        .avaliacao-cliente {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: "Montserrat", sans-serif;
+            color: #df70dfcc;
+        }
+
+        .avaliacao-data {
+            font-family: "Montserrat", sans-serif;
+            color: black;
+        }
+
+        .avaliacao-nota {
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+            color: black;
+        }
+
+        .avaliacao-comentario {
+            font-family: "Montserrat", sans-serif;
+            color: black;
+        }
     </style>
 </head>
 
@@ -162,22 +187,22 @@ $descricao = $produto['descricao'] ?? 'Sem descrição disponível para este pro
             <?php
             if (!empty($avaliacao)):
                 echo '
-    <p>Cliente:' . $avaliacao['nome'] . '</p>';
+    <p class="avaliacao-cliente">' . $avaliacao['nome'] . '</p>';
 
                 echo '
-    <p>Data da Avaliação: ' . $dataHora->format('d/m/Y à\s H:i') . '</p>
+    <p class="avaliacao-data">Data da Avaliação:  ' . $dataHora->format('d/m/Y à\s H:i') . '</p>
     
-    <p>Nota:' . $avaliacao['nota'] . '</p>
-    <p>Texto da Avaliação:<br>' . $avaliacao['comentario'] . '</p>';
+    <p class="avaliacao-nota">Nota:' . $avaliacao['nota'] . '</p>
+    <p class="avaliacao-comentario">' . $avaliacao['comentario'] . '</p>';
             else:
                 echo '<p>Nenhuma avaliação encontrada.</p>';
             endif;
             ?>
-    </div>
-        <a h    ref="avaliar.php?id_produto=<?= $id_produto ?>&nome_produto=<?= $nome ?>">
-                <button type="button" class="btn-avaliar">Avaliar</button>
-</a>
-        
+        </div>
+        <a h ref="avaliar.php?id_produto=<?= $id_produto ?>&nome_produto=<?= $nome ?>">
+            <button type="button" class="btn-avaliar">Avaliar</button>
+        </a>
+
     </section>
 
 </body>
