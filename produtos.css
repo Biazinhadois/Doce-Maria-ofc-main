@@ -1,0 +1,67 @@
+body {
+    background-color: #fdeef9; 
+    font-family: sans-serif;
+}
+
+.layout-conteudo {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.sidebar-categorias {
+    background: #eed8e9;
+    padding: 15px;
+    border-radius: 10px;
+    width: 180px;
+}
+
+.sidebar-categorias ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de cartões */
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.card-produtos{
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.img-produto {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.acoes-card {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.btn-compre {
+    background-color: #f3b6da;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+p{
+    color:pink
+}
